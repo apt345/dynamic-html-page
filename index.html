@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8"/>
+  <title>Dynamic webpage</title>
+  <style>
+      body {background-color: white;}
+    .special {color: blue}
+    .operator{font-weight: bold}
+    #result {border: solid 1pt; border-color: gray}
+  </style>
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <script>
+    function sum(){
+        const x=document.getElementById('first').value;
+        const y=document.getElementById('second').value;
+        const z=document.getElementById('operation').value;
+        document.getElementById('result').innerHTML=eval(x+z+y);
+    }
+  </script>
+</head>
+
+<body>
+    <div class="special">
+        Dynamic calculator by Arturo
+        <br>
+        <br>
+        Choose the first number
+        <input id="first" placeholder="First number">
+        <br>
+        Choose an operation:
+        <br>
+        <select name="operation" id="operation">
+          <option value="+">+</option>
+          <option value="-">-</option>
+          <option value="*">*</option>
+          <option value="/">/</option>
+          </select>
+        <br>
+        Choose the second number
+        <br>
+        <input id="second" placeholder="Second number">
+        <br>
+        <button id="equalTo" onclick="sum()">=</button>
+        <br>
+        And the result is...
+          <br>
+        <div id="result"> Result </div>
+    </div>
+
+</body>
+
+
+
+</html>
